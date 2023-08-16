@@ -1,0 +1,50 @@
+﻿@model projectLivro.Models.modelLivro
+
+@{
+    ViewBag.Title = "Detalhes livro";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>modelLivro</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nm_Livro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nm_Livro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_Inicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_Inicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_Termino)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_Termino)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nota_Livro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nota_Livro)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Atualizar", "Edit", new { id = Model.id_Livro }, new { @class = "btn btn-default text-bg-success" }) |
+    @Html.ActionLink("Cancelar", "Index", "Home")
+</p>

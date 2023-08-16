@@ -1,0 +1,52 @@
+﻿@model IEnumerable<projectLivro.Models.modelLivro>
+
+@{
+    ViewBag.Title = "Lista de Livros";
+}
+
+<h2> Lista de Livros </h2>
+
+<p>
+    @Html.ActionLink("Novo Livro", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nm_Livro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data_Inicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data_Termino)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nota_Livro)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nm_Livro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.data_Inicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.data_Termino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nota_Livro)
+            </td>
+            <td>
+                @Html.ActionLink("Atualizar", "Edit", new { id = item.id_Livro }, new { @class = "btn btn-default text-bg-success" }) |
+                @Html.ActionLink("Detalhes", "Details", new { id = item.id_Livro }, new { @class = "btn btn-default text-bg-warning" }) |
+                @Html.ActionLink("Apagar", "Delete", new { id = item.id_Livro }, new { @class = "btn btn-default text-bg-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
